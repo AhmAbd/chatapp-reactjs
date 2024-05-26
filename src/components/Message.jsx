@@ -1,15 +1,15 @@
 import { TextField } from "@mui/material";
 import "./Message.css";
 
-function Message({ value }) {
+function Message(props) {
     return (
         <>
             <div id="msgdiv" className="flex w-full flex-col">
-                <h1 id="username">Ahmed</h1>
+                <h1 id="username">{props.messageInfo.name}</h1>
                 <TextField
                     id="outlined-read-only-input"
                     label=""
-                    value={value}
+                    value={props.messageInfo.message}
                     InputProps={{
                         readOnly: true,
                         style: { color: 'white' }
